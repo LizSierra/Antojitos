@@ -1,56 +1,65 @@
-<div class="padding">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="container ">
-                <app-insertar-categorias></app-insertar-categorias>
-            </div>
-        </div>
-        <!-- TABLA -->
-        <div class="col-md-6">
-            <div class="form-group">
-                <input type="text" class="search form-control" placeholder="Buscar..">
-            </div>
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th class="col-md-1 col-xs-1">Nombre</th>
-                        <th class="col-md-5 col-xs-5">Descripción </th>
-                        <th class="col-md-5 col-xs-5">Ingredientes</th>
-                        <th class="col-md-3 col-xs-3">Número de piezas</th>
-                        <th class="col-md-4 col-xs-4">Precio</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>asdfgh</td>
-                        <td>dfghj</td>
-                        <td>fgh</td>
-                        <td> 455</td>
-                        <td>$128</td>
-                    </tr>
-                    <tr>
-                        <td>asdfgh</td>
-                        <td>dfghj</td>
-                        <td>fgh</td>
-                        <td> 455</td>
-                        <td>$128</td>
-                    </tr>
-                    <tr>
-                        <td>asdfgh</td>
-                        <td>dfghj</td>
-                        <td>fgh</td>
-                        <td> 455</td>
-                        <td>$128</td>
-                    </tr>
-                    <tr>
-                        <td>asdfgh</td>
-                        <td>dfghj</td>
-                        <td>fgh</td>
-                        <td> 455</td>
-                        <td>$128</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+<div class="contenedor">
+    <img src="assets/img/1.jpg" class="card-img-top">
+    <div class="sub tittle">
+        Gestión De Platillos
     </div>
-</div>
+    <!--
+        <div class="tittle">
+            “Juanita y Don Miguel”
+        </div>
+
+        <button type="submit" [routerLink]="'/platillos'" class="btn btn-lg boton">PLATILLOS</button>
+        <button type="submit" [routerLink]="'/categorias'" class="btn btn-lg boton2">CATEGORIAS</button>
+    </div> -->
+    <div class="style">
+        <div class="padding">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="container ">
+                        <app-insertar-platillos></app-insertar-platillos>
+                    </div>
+                </div>
+                <!-- TABLA -->
+
+
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <input type="text" class="search form-control" placeholder="Buscar..">
+                    </div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="w-1/4 px-4 py-2">Nombre</th>
+                                <th class="w-1/4 px-4 py-2">Descripción </th>
+                                <th class="w-1/4 px-4 py-2">Ingredientes</th>
+                                <th class="w-1/4 px-4 py-2">Número de piezas</th>
+                                <th class="w-1/4 px-4 py-2">Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border px-4 py-2">Intro to CSS</td>
+                                <td class="border px-4 py-2">Adam</td>
+                                <td class="border px-4 py-2">Intro to CSS</td>
+                                <td class="border px-4 py-2">Adam</td>
+                                <td class="border px-4 py-2">858</td>
+                            </tr>
+                            <tr class="bg-gray-100">
+                                <td class="border px-4 py-2">A Long and Winding Tour of the History of UI Frameworks and Tools and the Impact on Design</td>
+                                <td class="border px-4 py-2">Adam</td>
+                                <td class="border px-4 py-2">A Long and Winding Tour of the History of UI Frameworks and Tools and the Impact on Design</td>
+                                <td class="border px-4 py-2">Adam</td>
+                                <td class="border px-4 py-2">112</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">Intro to JavaScript</td>
+                                <td class="border px-4 py-2">Chris</td>
+                                <td class="border px-4 py-2">Intro to JavaScript</td>
+                                <td class="border px-4 py-2">Chris</td>
+                                <td class="border px-4 py-2">1,280</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
