@@ -1,0 +1,79 @@
+.style {
+    height: 100%;
+}
+
+.tittle {
+    font-family: 'Lobster Two', cursive;
+    font-size: 60px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 1px 2px black;
+}
+
+.sub {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 40px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 1px 2px black;
+}
+
+.contenedor {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    bottom: 50px;
+}
+
+.card-img-top {
+    border: none;
+    border-radius: 0px 0px 50px 50px;
+}
+
+.boton {
+    font-family: 'Open Sans', sans-serif;
+    width: 150px;
+    border: 1%;
+    border-color: white;
+    background-color: transparent;
+    position: absolute;
+    top: 80%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    color: white;
+    size: 30px 20px 20px 20px;
+    transition: all .5s ease-in-out;
+}
+
+.boton2 {
+    font-family: 'Open Sans', sans-serif;
+    width: 150px;
+    border: 1%;
+    border-color: white;
+    background-color: transparent;
+    position: absolute;
+    top: 80%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    color: white;
+    size: 30px 20px 20px 20px;
+    transition: all .5s ease-in-out;
+}
+
+.boton:hover {
+    background-color: white;
+    /* Green */
+    color: black;
+}
+
+.boton2:hover {
+    background-color: white;
+    /* Green */
+    color: black;
+}
