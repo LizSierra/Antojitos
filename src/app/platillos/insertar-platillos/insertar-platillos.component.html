@@ -5,15 +5,39 @@
     <div class="container small padding">
         <form class="text">
             <div class="form-group">
-                <label for="exampleInputEmail1">Nombre de categoria: </label>
+                <label for="exampleInputEmail1">ID-CAT: </label>
                 <div>
-                    <input class="form-control" type="text" id=" validationServer01" name="strNombre" [(ngModel)]="platillos.strNombre" #strNombre="ngModel" required>
+                    <input class="form-control" type="text" id=" validationServer01" name="idCategoria" [(ngModel)]="platillos.idCategoria" #idCategoria="ngModel" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nombre del Platillo: </label>
+                <div>
+                    <input class="form-control" type="text" id=" validationServer02" name="strNombre" [(ngModel)]="platillos.strNombre" #strNombre="ngModel" required>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Descripción:</label>
-                <input class="form-control" type="text" id=" validationServer02" name="strDescripcion" [(ngModel)]="platillos.strDescripcion" #strDescripcion="ngModel" required>
+                <input class="form-control" type="text" id=" validationServer03" name="strDescripcion" [(ngModel)]="platillos.strDescripcion" #strDescripcion="ngModel" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Ingredientes: </label>
+                <div>
+                    <input class="form-control" type="text" id=" validationServer04" name="strIngredientes" [(ngModel)]="platillos.strIngredientes" #strIngredientes="ngModel" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Número de Piezas: </label>
+                <div>
+                    <input class="form-control" type="text" id=" validationServer05" name="nmbPiezas" [(ngModel)]="platillos.nmbPiezas" #nmbPiezas="ngModel" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Precio: </label>
+                <div>
+                    <input class="form-control" type="text" id=" validationServer06" name="nmbPrecio" [(ngModel)]="platillos.nmbPrecio" #nmbPrecio="ngModel" required>
+                </div>
             </div>
             <button type="submit" class=" style btn border-info mr-3" (click)="registrarPlatillos(forma)">Registrar</button>
             <button type="button" class=" style btn border-info mr-3">Cancelar</button>

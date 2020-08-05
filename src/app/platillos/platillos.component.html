@@ -42,25 +42,26 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th class="w-1/4 px-4 py-2">ID-CAT </th>
-                                <th class="w-1/4 px-4 py-2">Nombre</th>
-                                <th class="w-1/4 px-4 py-2">Descripción </th>
-                                <th class="w-1/4 px-4 py-2">Ingredientes </th>
-                                <th class="w-1/4 px-4 py-2">Piezas </th>
-                                <th class="w-1/4 px-4 py-2">Precio </th>
-                                <th class="w-1/4 px-4 py-2 text-center">Activo</th>
-                                <th class="w-1/4 px-4 py-2 text-center">Acciones</th>
+                                <th class=" py-2">ID-CAT </th>
+                                <th class="w-1/4 px-2 py-2">Nombre</th>
+                                <th class="w-1/4 px-2 py-2">Descripción </th>
+                                <th class="w-1/4 px-2 py-2">Ingredientes </th>
+                                <th class="w-1/4 px-2 py-2">Piezas </th>
+                                <th class="w-1/4 px-2 py-2">Precio </th>
+                                <th class="w-1/4 px-2 py-2 text-center">Activo</th>
+                                <th class="w-1/4 px-2 py-2 text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let platillo of platillos">
-                                <td class=" px-4 py-2">{{platillo.strNombre}}</td>
-                                <td class=" px-4 py-2">{{platillo.strDescripcion}}</td>
-                                <td class=" px-4 py-2">{{platillo.strIngredientes}}</td>
-                                <td class=" px-4 py-2">{{platillo.nmbPiezas}}</td>
-                                <td class=" px-4 py-2">{{platillo.nmbPrecio}}</td>
-                                <td class=" px-4 py-2 text-center">{{platillo.blnActivo == true ? 'Sí': 'No'}}</td>
-                                <td class=" px-4 py-2 text-center">
+                                <td class=" px-2 py-2">{{platillo.idCategoria}}</td>
+                                <td class=" px-2 py-2">{{platillo.strNombre}}</td>
+                                <td class=" px-2 py-2">{{platillo.strDescripcion}}</td>
+                                <td class=" px-2 py-2">{{platillo.strIngredientes}}</td>
+                                <td class=" px-2 py-2">{{platillo.nmbPiezas}}</td>
+                                <td class=" px-2 py-2">{{platillo.nmbPrecio}}</td>
+                                <td class=" px-2 py-2 text-center">{{platillo.blnActivo == true ? 'Sí': 'No'}}</td>
+                                <td class=" px-2 py-2 text-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn border-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                           
@@ -80,5 +81,5 @@
             </div>
         </div>
 
-
+        <br>
         <img class="base" src="assets/img/2.jpg">

@@ -63,7 +63,7 @@
                                             <a type="button" class="dropdown-item" (click)="mostrarEditar(categoria._id)">Editar</a>
                                             <a type="button" class="dropdown-item" (click)="desactivarCategoria(categoria._id)">Desactivar</a>
                                             <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" [routerLink]="['/platillos', categoria._id]">Gestionar Platillos</a>
+                                            <a type="button" class="dropdown-item" [routerLink]="['/platillos', categoria._id]">Gestionar Platillos</a>
                                         </div>
                                     </div>
                                 </td>

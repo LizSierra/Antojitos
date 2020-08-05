@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PlatilloService } from '../services/platillo/platillo.service';
-
+import { Router, ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
+import { from } from 'rxjs';
 
 const Toast = Swal.mixin({
   toast: true,
@@ -17,15 +18,20 @@ const Toast = Swal.mixin({
 })
 export class PlatillosComponent implements OnInit {
 
+  @Input() idCategoria;
   registrarPlatillos: boolean = true;
   actualizarPlatillos: boolean = false;
   platillos: any;
   idPlatillos: string;
+  idCategorias: string;
   arraPlatillos = [];
   arraNewPlatillos = [];
   title: string;
   buscarTexto: string;
-  constructor(private PlatilloService: PlatilloService) { }
+  constructor(private PlatilloService: PlatilloService, private activatedRouter: ActivatedRoute, private router: Router) { 
+    this.idCategorias = activatedRouter.snapshot.params.idCategorias;
+
+     }
 
   ngOnInit(): void {
     this.obtenerPlatillos();
@@ -46,21 +52,22 @@ this.registrarPlatillos = true;
 
 
   obtenerPlatillos() {
-    this.arraPlatillos = [];
-    this.PlatilloService.obtenerPlatillos().then((platillos: any) => {
-      
-      this.platillos = platillos.cont;
+    this.PlatilloService.obtenerPlatillosid(this.idCategorias).then((platillos: any) => {
+    this.platillos = this.platillos.cont.platillos;
       
       for (const platillo of this.platillos){
         let element = [
 
+          platillo.idCategoria,
           platillo.strNombre.replace(/\:null/gi,':""'),
           platillo.strDescripcion.replace(/\:null/gi,':""'),
+          platillo.strIngredientes.replace(/\:null/gi,':""'),
+          platillo.nmbPiezas,
+          platillo.nmbPrecio,
           platillo.blnActivo ? 'Sí' : 'No',
 
         ];
         this.arraPlatillos.push(element);
-        this.arraNewPlatillos = this.arraPlatillos;
       }
     }).catch((err: any) => {
       
