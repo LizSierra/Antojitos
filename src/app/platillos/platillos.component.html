@@ -3,63 +3,82 @@
     <div class="sub tittle">
         Gestión De Platillos
     </div>
-    <!--
-        <div class="tittle">
-            “Juanita y Don Miguel”
-        </div>
 
-        <button type="submit" [routerLink]="'/platillos'" class="btn btn-lg boton">PLATILLOS</button>
-        <button type="submit" [routerLink]="'/categorias'" class="btn btn-lg boton2">CATEGORIAS</button>
-    </div> -->
-    <div class="style">
+    <div class="style text">
         <div class="padding">
-            <div class="row">
+            <div class="row ">
                 <div class="col-md-4">
-                    <div class="container ">
-                        <app-insertar-platillos></app-insertar-platillos>
+                    <div class=" " *ngIf="registrarPlatillos">
+                        <app-insertar-platillos [idPlatillos]="idPlatillos" (terminarActualizacion)="cancelarEditar($event)"></app-insertar-platillos>
+                    </div>
+                    <div class="" *ngIf="actualizarPlatillos">
+                        <app-editar-platillos [idPlatillos]="idPlatillos" (terminarActualizacion)="cancelarEditar($event)"></app-editar-platillos>
                     </div>
                 </div>
                 <!-- TABLA -->
 
 
                 <div class="col-md-8">
-                    <div class="form-group">
-                        <input type="text" class="search form-control" placeholder="Buscar..">
+                    <div class="row container mt-4">
+
+                        <div class="col-md-11 mt-2">
+                            <input type="text" [(ngModel)]="buscarTexto" name="buscarTexto" class="search form-control" placeholder="Buscar..">
+                        </div>
+                        <div class="col-md-1 mt-2">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  
+                                </button>
+                                <div class="dropdown-menu button-small">
+                                    <a class="dropdown-item">PDF</a>
+                                    <a class="dropdown-item">EXCEL</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item">Separated link</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <br>
                     <table class="table table-hover">
                         <thead>
                             <tr>
+                                <th class="w-1/4 px-4 py-2">ID-CAT </th>
                                 <th class="w-1/4 px-4 py-2">Nombre</th>
                                 <th class="w-1/4 px-4 py-2">Descripción </th>
-                                <th class="w-1/4 px-4 py-2">Ingredientes</th>
-                                <th class="w-1/4 px-4 py-2">Número de piezas</th>
-                                <th class="w-1/4 px-4 py-2">Precio</th>
+                                <th class="w-1/4 px-4 py-2">Ingredientes </th>
+                                <th class="w-1/4 px-4 py-2">Piezas </th>
+                                <th class="w-1/4 px-4 py-2">Precio </th>
+                                <th class="w-1/4 px-4 py-2 text-center">Activo</th>
+                                <th class="w-1/4 px-4 py-2 text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="border px-4 py-2">Intro to CSS</td>
-                                <td class="border px-4 py-2">Adam</td>
-                                <td class="border px-4 py-2">Intro to CSS</td>
-                                <td class="border px-4 py-2">Adam</td>
-                                <td class="border px-4 py-2">858</td>
-                            </tr>
-                            <tr class="bg-gray-100">
-                                <td class="border px-4 py-2">A Long and Winding Tour of the History of UI Frameworks and Tools and the Impact on Design</td>
-                                <td class="border px-4 py-2">Adam</td>
-                                <td class="border px-4 py-2">A Long and Winding Tour of the History of UI Frameworks and Tools and the Impact on Design</td>
-                                <td class="border px-4 py-2">Adam</td>
-                                <td class="border px-4 py-2">112</td>
-                            </tr>
-                            <tr>
-                                <td class="border px-4 py-2">Intro to JavaScript</td>
-                                <td class="border px-4 py-2">Chris</td>
-                                <td class="border px-4 py-2">Intro to JavaScript</td>
-                                <td class="border px-4 py-2">Chris</td>
-                                <td class="border px-4 py-2">1,280</td>
+                            <tr *ngFor="let platillo of platillos">
+                                <td class=" px-4 py-2">{{platillo.strNombre}}</td>
+                                <td class=" px-4 py-2">{{platillo.strDescripcion}}</td>
+                                <td class=" px-4 py-2">{{platillo.strIngredientes}}</td>
+                                <td class=" px-4 py-2">{{platillo.nmbPiezas}}</td>
+                                <td class=" px-4 py-2">{{platillo.nmbPrecio}}</td>
+                                <td class=" px-4 py-2 text-center">{{platillo.blnActivo == true ? 'Sí': 'No'}}</td>
+                                <td class=" px-4 py-2 text-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn border-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a type="button" class="dropdown-item" (click)="mostrarEditar(platillo._id)">Editar</a>
+                                            <a type="button" class="dropdown-item" (click)="desactivarCategoria(platillo._id)">Desactivar</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Gestionar Platillos</a>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
+
+
+        <img class="base" src="assets/img/2.jpg">

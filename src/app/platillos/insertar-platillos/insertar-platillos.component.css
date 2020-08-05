@@ -1,0 +1,15 @@
+.text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+.text2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+
+.style:hover {
+    background-color: #17a2b8;
+    /* Green */
+    color: white;
+}

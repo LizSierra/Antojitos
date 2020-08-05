@@ -1,0 +1,24 @@
+<div class="text2">
+    Editar Categoria
+</div>
+<form #forma="ngForm">
+    <div class="container small padding">
+        <form class="text">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nombre de categoria: </label>
+                <div>
+                    <input class="form-control" type="text" id=" validationServer01" name="strNombre" [(ngModel)]="categoria.strNombre" #strNombre="ngModel" required>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Descripción:</label>
+                <input class="form-control" type="text" id=" validationServer02" name="strDescripcion" [(ngModel)]="categoria.strDescripcion" #strDescripcion="ngModel" required>
+            </div>
+            <button type="submit" class=" style btn border-info mr-3" (click)="editarCategoria()">Actualizarr</button>
+            <button type="button" class=" style btn border-info mr-3" (click)="cancelar()">Cancelar</button>
+
+        </form>
+    </div>
+</form>
